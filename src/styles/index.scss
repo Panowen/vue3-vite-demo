@@ -1,0 +1,137 @@
+//scss 语法糖包含常用的布局方式 flex column
+@import './scss-suger.scss';
+//重置 element-plus 样式
+@import './reset-elemenet-plus-style.scss';
+//动画文件
+@import './transition.scss';
+
+//reset style
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+span,
+output {
+  display: inline-block;
+  line-height: 1;
+}
+
+//scroll
+@mixin main-show-wh() {
+  /* css 声明 */
+  //height: calc(100vh - #{$navBarHeight} - #{$tagViewHeight} - #{$appMainPadding * 2});
+  height: calc(100vh - #{var(--nav-bar-height)} - #{var(--tag-view-height)} - #{calc(10px * 2)});
+  width: 100%;
+}
+.scroll-y {
+  @include main-show-wh();
+  overflow-y: auto;
+}
+.scroll-x {
+  @include main-show-wh();
+  overflow-x: auto;
+}
+.scroll-xy {
+  @include main-show-wh();
+  overflow: auto;
+}
+// 主题颜色
+html {
+  /*element-plus section */
+  --el-menu-active-color: #fff;
+  --el-menu-text-color: #bfcbd9;
+  --el-menu-hover-text-color: var(--el-color-primary);
+  --el-menu-bg-color: #2b2f3a;
+  --el-menu-hover-bg-color: #263445;
+  --el-menu-item-height: 56px;
+  --el-menu-border-color: none;
+  /*layout section*/
+  //layout
+  --layout-border-left-color: #ddd;
+  //Breadcrumb
+  --breadcrumb-no-redirect: #97a8be;
+  //Hamburger
+  --hamburger-color: #2b2f3a;
+  --hamburger-width: 20px;
+  --hamburger-height: 20px;
+  //Sidebar
+  --sidebar-el-icon-size: 20px;
+  --sidebar-logo-background: #2b2f3a;
+  --sidebar-logo-color: #ff9901;
+  --sidebar-logo-width: 32px;
+  --sidebar-logo-height: 32px;
+  --sidebar-logo-title-color: #fff;
+  --side-bar-width: 200px;
+  --side-bar-border-right-color: #eee;
+  //TagsView
+  --tags-view-background: #fff;
+  --tags-view-border-bottom: #eee;
+  --tags-view-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+  --tags-view-item-background: #fff;
+  --tags-view-item-border-color: #d8dce5;
+  --tags-view-item-color: #495060;
+  --tag-view-height: 32px;
+  --tags-view-item-active-background: #42b983;
+  --tags-view-item-active-color: #fff;
+  --tags-view-item-active-border-color: #42b983;
+  --tags-view-contextmenu-background: #fff;
+  --tags-view-contextmenu-color: #333;
+  --tags-view-contextmenu-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+  --tags-view-contextmenu-hover-background: #eee;
+  //close-icon
+  --tags-view-close-icon-hover-background: #b4bccc;
+  --tags-view-close-icon-hover-color: #fff;
+  //AppMain.vue
+  --app-main-padding: 10px;
+  --app-main-background: #fff;
+  //Navbar.vue
+  --nav-bar-height: 50px;
+  --nav-bar-background: #fff;
+  --nav-bar-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  --nav-bar-right-menu-background: #fff;
+
+  //transition 动画
+  //侧边栏切换动画时长
+  --sideBar-switch-duration: 0.2s;
+  //logo切换动画时长
+  --logo-switch-duration: 1s;
+  //页面动画时长
+  --page-transform-duration: 0.2s;
+  //面包屑导航动画时长
+  --breadcrumb-change-duration: 0.2s;
+
+  //进度条颜色
+  --pregress-bar-color: #409eff;
+}

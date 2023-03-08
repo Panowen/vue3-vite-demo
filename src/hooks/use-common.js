@@ -16,7 +16,6 @@ export function cloneDeep(value) {
   return JSON.parse(JSON.stringify(value))
 }
 
-//copyValueToClipboard
 const { toClipboard } = useClipboard()
 export const copyValueToClipboard = (value) => {
   toClipboard(JSON.stringify(value))

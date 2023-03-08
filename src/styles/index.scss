@@ -67,7 +67,7 @@ output {
   @include main-show-wh();
   overflow: auto;
 }
-// 主题颜色
+
 html {
   /*element-plus section */
   --el-menu-active-color: #fff;
@@ -134,4 +134,14 @@ html {
 
   //进度条颜色
   --pregress-bar-color: #409eff;
+}
+
+.mb-5px {
+  margin-bottom: 5px;
+}
+.mb-10px {
+  margin-bottom: 10px;
+}
+.mb-20px {
+  margin-bottom: 20px;
 }

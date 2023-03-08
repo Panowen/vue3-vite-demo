@@ -1,5 +1,7 @@
 import NProgress from 'nprogress'
-
+/**
+ * 路由操作
+ * */
 import router, { constantRoutes } from '@/router'
 //进度条
 import 'nprogress/nprogress.css'

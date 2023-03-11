@@ -10,18 +10,18 @@
 </template>
 
 <script setup>
-import { Fold, Expand } from '@element-plus/icons-vue'
+import { Fold, Expand } from '@element-plus/icons-vue';
 defineProps({
   isActive: {
     type: Boolean,
-    default: false
-  }
-})
-const emit = defineEmits(['toggleClick'])
+    default: false,
+  },
+});
+const emit = defineEmits(['toggleClick']);
 //切换左侧栏关闭和隐藏
 const toggleClick = () => {
-  emit('toggleClick')
-}
+  emit('toggleClick');
+};
 </script>
 
 <style scoped lang="scss">

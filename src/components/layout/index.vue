@@ -9,17 +9,18 @@
   </div>
 </template>
 <script setup>
-import Sidebar from './sidebar/index.vue'
-import AppMain from './app-main/index.vue'
-import Navbar from './app-main/Navbar.vue'
-import TagsView from './app-main/TagsView.vue'
-import { useBasicStore } from '@/store/basic'
-const { sidebar } = useBasicStore()
+import { computed } from 'vue';
+import Sidebar from './sidebar/index.vue';
+import AppMain from './app-main/index.vue';
+import Navbar from './app-main/Navbar.vue';
+import TagsView from './app-main/TagsView.vue';
+import { useBasicStore } from '@/store/basic';
+const { sidebar } = useBasicStore();
 const classObj = computed(() => {
   return {
-    closeSidebar: !sidebar.opened
-  }
-})
+    closeSidebar: !sidebar.opened,
+  };
+});
 </script>
 
 <style lang="scss" scoped>

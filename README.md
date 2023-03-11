@@ -1,27 +1,31 @@
-# vue3-vite-demo
+vue3-vite-demo
 
-This template should help get you started developing with Vue 3 in Vite.
+## Build Setup
 
-## Project Setup
+```bash
+pnpm i
 
-```sh
-pnpm install
+# develop
+pnpm run dev
 ```
 
-### Compile and Hot-Reload for Development
+## Build
 
-```sh
-npm run dev
+```bash
+# build for test environment
+pnpm run build-test
+
+# build for production environment
+pnpm run  build
 ```
 
-### Compile and Minify for Production
+## Others
 
-```sh
-npm run build
-```
+```bash
+# preview the release environment effect
+pnpm run preview
 
-### Lint with [ESLint](https://eslint.org/)
+# code format check
+pnpm run lint
 
-```sh
-npm run lint
 ```

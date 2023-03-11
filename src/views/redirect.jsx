@@ -1,13 +1,14 @@
-import { defineComponent } from 'vue'
+import { defineComponent, onBeforeMount } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 export default defineComponent({
   setup() {
-    const route = useRoute()
-    const router = useRouter()
+    const route = useRoute();
+    const router = useRouter();
     onBeforeMount(() => {
-      const { params, query } = route
-      const { path } = params
-      router.replace({ path: `/${path}`, query })
-    })
-    return () => <div> </div>
-  }
-})
+      const { params, query } = route;
+      const { path } = params;
+      router.replace({ path: `/${path}`, query });
+    });
+    return () => <div> </div>;
+  },
+});

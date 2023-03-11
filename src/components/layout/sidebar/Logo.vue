@@ -11,9 +11,9 @@ defineProps({
   //是否折叠
   collapse: {
     type: Boolean,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss">

@@ -1,7 +1,5 @@
 <template>
-  <div class="center-50">
-    <img src="@/assets/indexLogo.png" />
-  </div>
+  <div>add</div>
 </template>
 <script setup></script>
 

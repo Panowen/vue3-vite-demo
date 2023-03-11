@@ -1,4 +1,4 @@
-import Layout from '@/components/layout/index.vue'
+import Layout from '@/components/layout/index.vue';
 
 export default {
   path: '/redirect',
@@ -7,7 +7,7 @@ export default {
   children: [
     {
       path: '/redirect/:path(.*)',
-      component: () => import('@/views/redirect.jsx')
-    }
-  ]
-}
+      component: () => import('@/views/redirect.jsx'),
+    },
+  ],
+};

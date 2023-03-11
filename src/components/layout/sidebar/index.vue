@@ -19,18 +19,22 @@
 </template>
 
 <script setup>
-import Logo from './Logo.vue'
-import SidebarItem from './SidebarItem.vue'
-import { useBasicStore } from '@/store/basic'
-const { allRoutes, sidebar } = storeToRefs(useBasicStore())
-const routeInstance = useRoute()
+import { computed } from 'vue';
+import Logo from './Logo.vue';
+import SidebarItem from './SidebarItem.vue';
+import { useBasicStore } from '@/store/basic';
+import { storeToRefs } from 'pinia/dist/pinia';
+import { useRoute } from 'vue-router';
+const { allRoutes, sidebar } = storeToRefs(useBasicStore());
+
+const routeInstance = useRoute();
 const activeMenu = computed(() => {
-  const { meta, path } = routeInstance
+  const { meta, path } = routeInstance;
   if (meta.activeMenu) {
-    return meta.activeMenu
+    return meta.activeMenu;
   }
-  return path
-})
+  return path;
+});
 </script>
 <style lang="scss">
 .el-menu-vertical {

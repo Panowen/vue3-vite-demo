@@ -22,17 +22,17 @@
 </template>
 
 <script setup>
-import { CaretBottom } from '@element-plus/icons-vue'
-import Breadcrumb from './Breadcrumb.vue'
-import Hamburger from './Hamburger.vue'
-import { useBasicStore } from '@/store/basic'
+import { CaretBottom } from '@element-plus/icons-vue';
+import Breadcrumb from './Breadcrumb.vue';
+import Hamburger from './Hamburger.vue';
+import { useBasicStore } from '@/store/basic';
 
-const basicStore = useBasicStore()
-const { sidebar, setToggleSideBar } = basicStore
+const basicStore = useBasicStore();
+const { sidebar, setToggleSideBar } = basicStore;
 const toggleSideBar = () => {
-  setToggleSideBar()
-}
-const loginOut = () => {}
+  setToggleSideBar();
+};
+const loginOut = () => {};
 </script>
 
 <style lang="scss" scoped>

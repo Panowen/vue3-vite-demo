@@ -24,41 +24,42 @@
 </template>
 
 <script setup>
-import { resolve } from 'path-browserify'
-import MenuIcon from './MenuIcon.vue'
+import { ref } from 'vue';
+import { resolve } from 'path-browserify';
+import MenuIcon from './MenuIcon.vue';
 
 const props = defineProps({
   item: {
     type: Object,
-    required: true
+    required: true,
   },
   basePath: {
     type: String,
-    default: ''
-  }
-})
+    default: '',
+  },
+});
 //显示sidebarItem 的情况
-const onlyOneChild = ref()
+const onlyOneChild = ref();
 const showSidebarItem = (children = [], parent) => {
   const showingChildren = children.filter((item) => {
     if (item.hidden) {
-      return false
+      return false;
     } else {
-      return true
+      return true;
     }
-  })
+  });
   if (showingChildren.length === 1 && !parent?.alwaysShow) {
-    onlyOneChild.value = showingChildren[0]
-    return true
+    onlyOneChild.value = showingChildren[0];
+    return true;
   }
   if (showingChildren.length === 0) {
-    onlyOneChild.value = { ...parent, path: '', noChildren: true }
-    return true
+    onlyOneChild.value = { ...parent, path: '', noChildren: true };
+    return true;
   }
-  return false
-}
+  return false;
+};
 const resolvePath = (routePath) => {
-  return resolve(props.basePath, routePath)
-}
+  return resolve(props.basePath, routePath);
+};
 </script>
 <style lang="scss"></style>

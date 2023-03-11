@@ -10,37 +10,39 @@
 </template>
 
 <script setup>
-import { compile } from 'path-to-regexp'
-const levelList = ref()
-const route = useRoute()
+import { ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { compile } from 'path-to-regexp';
+const levelList = ref();
+const route = useRoute();
 const getBreadcrumb = () => {
-  let matched = route.matched.filter((item) => item.meta?.title)
-  levelList.value = matched.filter((item) => item.meta && item.meta.title && item.meta.breadcrumb !== false)
-}
+  let matched = route.matched.filter((item) => item.meta?.title);
+  levelList.value = matched.filter((item) => item.meta && item.meta.title && item.meta.breadcrumb !== false);
+};
 
 //页面跳转处理
 //compile函数将返回一个用于将参数转换为有效路径的函数：
 //const  toPath =  compile ( "/user/:id" ,  {  encode : encodeURIComponent  } ) ;
 //toPath ( {  id : 123  } ) ; //=> "/user/123"
 const pathCompile = (path) => {
-  const { params } = route
-  const toPath = compile(path)
-  return toPath(params)
-}
-const router = useRouter()
+  const { params } = route;
+  const toPath = compile(path);
+  return toPath(params);
+};
+const router = useRouter();
 const handleLink = (item) => {
-  const { redirect, path } = item
+  const { redirect, path } = item;
   if (redirect) {
-    router.push(redirect)
-    return
+    router.push(redirect);
+    return;
   }
-  if (path) router.push(pathCompile(path))
-}
+  if (path) router.push(pathCompile(path));
+};
 watch(
   () => route.path,
   () => getBreadcrumb(),
   { immediate: true }
-)
+);
 </script>
 
 <style lang="scss" scoped>

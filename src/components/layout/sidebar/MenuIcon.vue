@@ -4,11 +4,11 @@
   </el-icon>
 </template>
 
-<script setup >
-import * as ElSvg from '@element-plus/icons-vue'
+<script setup>
+import * as ElSvg from '@element-plus/icons-vue';
 defineProps({
-  meta: { type: Object, default: null }
-})
+  meta: { type: Object, default: null },
+});
 </script>
 
 <style scoped lang="scss">

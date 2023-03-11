@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Layout from '@/components/layout/index.vue'
-import redirect from './redirect'
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Layout from '@/components/layout/index.vue';
+import redirect from './redirect';
 
 /**
  * title：页面标题
@@ -17,9 +17,9 @@ export const constantRoutes = [
         path: '/',
         name: 'Home',
         component: () => import('@/views/home.vue'),
-        meta: { title: '首页', elSvgIcon: 'Fold', affix: true }
-      }
-    ]
+        meta: { title: '首页', elSvgIcon: 'Fold', affix: true },
+      },
+    ],
   },
   {
     path: '/preject',
@@ -27,24 +27,24 @@ export const constantRoutes = [
     name: 'Preject',
     redirect: '/preject/list',
     meta: {
-      title: 'A管理',
-      elSvgIcon: 'Fold'
+      title: '项目管理',
+      elSvgIcon: 'Fold',
     },
     children: [
       {
         path: 'list',
         name: 'PrejectList',
-        component: () => import('@/views/home.vue'),
-        meta: { title: 'A管理', elSvgIcon: 'Fold' }
+        component: () => import('@/views/preject/index.vue'),
+        meta: { title: '项目管理', elSvgIcon: 'Fold' },
       },
       {
         hidden: true,
         path: 'add',
         name: 'PrejectAdd',
-        component: () => import('@/views/home.vue'),
-        meta: { title: 'A新增' }
-      }
-    ]
+        component: () => import('@/views/preject/prejectAdd.vue'),
+        meta: { title: '项目新增' },
+      },
+    ],
   },
   {
     path: '/experiment',
@@ -52,24 +52,24 @@ export const constantRoutes = [
     name: 'Experiment',
     redirect: '/experiment/list',
     meta: {
-      title: 'B管理',
-      elSvgIcon: 'Fold'
+      title: '实验管理',
+      elSvgIcon: 'Fold',
     },
     children: [
       {
         path: 'list',
         name: 'ExperimentList',
-        component: () => import('@/views/home.vue'),
-        meta: { title: 'B管理', elSvgIcon: 'Fold' }
+        component: () => import('@/views/experiment/index.vue'),
+        meta: { title: '实验管理', elSvgIcon: 'Fold' },
       },
       {
         hidden: true,
         path: 'add',
         name: 'ExperimentAdd',
-        component: () => import('@/views/home.vue'),
-        meta: { title: 'B新增' }
-      }
-    ]
+        component: () => import('@/views/experiment/experimentAdd.vue'),
+        meta: { title: '项目新增' },
+      },
+    ],
   },
   {
     path: '/template',
@@ -77,29 +77,29 @@ export const constantRoutes = [
     name: 'Template',
     redirect: '/template/list',
     meta: {
-      title: 'C管理',
-      elSvgIcon: 'Fold'
+      title: '实验模板管理',
+      elSvgIcon: 'Fold',
     },
     children: [
       {
         path: 'list',
         name: 'TemplateList',
-        component: () => import('@/views/home.vue'),
-        meta: { title: 'C管理', elSvgIcon: 'Fold' }
+        component: () => import('@/views/template/index.vue'),
+        meta: { title: '实验模板管理', elSvgIcon: 'Fold' },
       },
       {
         hidden: true,
         path: 'add',
         name: 'TemplateAdd',
-        component: () => import('@/views/home.vue'),
-        meta: { title: 'C新增' }
-      }
-    ]
-  }
-]
+        component: () => import('@/views/template/templateAdd.vue'),
+        meta: { title: '模板新增' },
+      },
+    ],
+  },
+];
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: constantRoutes
-})
+  history: createWebHashHistory(import.meta.env.BASE_URL),
+  routes: constantRoutes,
+});
 
-export default router
+export default router;
